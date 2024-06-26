@@ -114,6 +114,8 @@ def create_symbol(
                 )
         kicad_symbol.drawing += """\n    )"""
 
+    footprint_name = footprint_name.split('\\')[-1]
+
     template_lib_component = f"""\
   (symbol "{ComponentName}" {kicad_symbol.pinNamesHide} {kicad_symbol.pinNumbersHide} (in_bom yes) (on_board yes)
     (property "Reference" "{symmbolic_prefix}" (id 0) (at 0 1.27 0)
